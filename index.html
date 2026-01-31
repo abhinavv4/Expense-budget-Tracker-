@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+    <div class="container">
+        <header>
+            <button id="theme-toggle" class="btn-toggle"><i class="fas fa-moon"></i></button>
+            <h1><i class="fas fa-wallet"></i> Expense Tracker</h1>
+            <div class="balance-container">
+                <h3>Total Spend</h3>
+                <h2 id="total-amount">₹0.00</h2>
+                <div class="budget-control">
+                    <label for="budget">Budget Limit: ₹</label>
+                    <input type="number" id="budget" placeholder="Set budget">
+                </div>
+                <p id="budget-alert"></p>
+            </div>
+        </header>
+
+        <section class="add-transaction">
+            <h3>Add New Expense</h3>
+            <form id="expense-form">
+                <div class="form-control">
+                    <label for="text">Description</label>
+                    <input type="text" id="text" placeholder="e.g. Groceries" required>
+                </div>
+
+                <div class="form-control">
+                    <label for="transaction-date">Date & Time (Optional)</label>
+                    <input type="datetime-local" id="transaction-date">
+                </div>
+
+                <div class="form-group-row">
+                    <div class="form-control">
+                        <label for="amount">Amount (₹)</label>
+                        <input type="number" id="amount" placeholder="0" min="0.01" step="0.01" required>
+                    </div>
+                    <div class="form-control">
+                        <label for="category">Category</label>
+                        <select id="category">
+                            <option value="Food">Food</option>
+                            <option value="Transport">Transport</option>
+                            <option value="Utilities">Utilities</option>
+                            <option value="Entertainment">Entertainment</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn">Add Transaction</button>
+            </form>
+        </section>
+
+        <section class="chart-container">
+            <h3>Expense Breakdown</h3>
+            <div style="position: relative; height: 300px;">
+                <canvas id="expense-chart"></canvas>
+            </div>
+        </section>
+
+        <section class="history">
+            <h3>History</h3>
+            <button id="export-btn" class="btn" style="margin-top: 0; margin-bottom: 15px; padding: 8px;">Export to CSV</button>
+            <ul id="list" class="list">
+            </ul>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

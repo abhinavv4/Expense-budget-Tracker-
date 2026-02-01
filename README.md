@@ -9,21 +9,6 @@ Track your expenses, set budgets, and get insights into your spending habits —
 - [About](#about)
 - [Features](#features)
 - [Tech stack](#tech-stack)
-- [Screenshots](#screenshots)
-- [Getting started](#getting-started)
-  - [Prerequisites](#prerequisites)
-  - [Installation](#installation)
-  - [Environment variables](#environment-variables)
-  - [Database](#database)
-  - [Run app (development)](#run-app-development)
-  - [Build & run (production)](#build--run-production)
-- [Usage](#usage)
-- [API (if applicable)](#api-if-applicable)
-- [Testing](#testing)
-- [Contributing](#contributing)
-- [License](#license)
-- [Contact](#contact)
-- [Acknowledgements](#acknowledgements)
 
 ## About
 
